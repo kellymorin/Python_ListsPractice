@@ -28,12 +28,10 @@ print(planet_list)
 satellites_and_planets = [("Europa Mission", "Jupiter"), ("Galileo", "Jupiter"), ("Hubble", "Mars"), ("InSight", "Mars"), ("Messenger", "Mercury"),("Hubble", "Neptune")]
 # Iterate over your list of planets, and inside that loop, iterate over the list of tuples. Print, for each planet, which satellites have visited it.
 for planet in planet_list:
-  mission_match = list()
-  for mission in satellites_and_planets:
-    if mission[1] == planet:
-      mission_match.append(mission)
-  if len(mission_match) > 0:
-    mission_details = str()
-    for mission in mission_match:
-      mission_details += mission[0] + " "
-    print(f"{planet} was visited by {mission_details}")
+    mission_match = list()
+    for mission in satellites_and_planets:
+        if mission[1] == planet:
+            mission_match.append(mission[0])
+    mission_details = (" & ").join(mission_match)
+    if len(mission_details) != 0:
+        print(f"{planet} was visited by {mission_details}")
